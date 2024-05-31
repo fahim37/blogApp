@@ -1,15 +1,9 @@
-const mongoose = require("mongoose");
-const colors = require("colors");
-const connectDB = async () => {
-    try {
-        await mongoose.connect('mongodb+srv://fahim37:fahim0037@blogcluster.udrdown.mongodb.net/blogapp?retryWrites=true&w=majority&appName=BlogCluster');
-        console.log(
-            `Connected to Mongodb Database ${mongoose.connection.host}`.bgMagenta
-                .white
-        );
-    } catch (error) {
-        console.log(`MONGO Connect Error ${error}`.bgRed.white);
-    }
-};
+const mongoose = require('mongoose');
+const dbHOST = process.env.DBHOST;
 
-module.exports = connectDB;
+mongoose.connect(dbHOST)
+    .then(() => {
+        console.log('MongoDB Connnected...')
+    }).catch((err) => {
+        console.log('Error while Mongo Conn..', err);
+    })
