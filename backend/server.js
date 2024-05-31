@@ -13,7 +13,7 @@ const userRoutes = require("./routes/userRoutes");
 const blogRoutes = require("./routes/blogRoutes");
 app.use(cors(
     {
-        origin: ["https://deploy-mern-frontend.vercel.app"],
+        origin: ["https://blog-app-sable-three.vercel.app"],
         methods: ["POST", "GET"],
         credentials: true
     }
